@@ -1,0 +1,56 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Contact Details</h3>
+      <hr>
+      <address>
+        <strong>Email:</strong> <a href="mailto:#"> name@domain.com</a><br><br>
+        <strong>Phone:</strong> (555)123-4567
+        <br><br>
+        <strong>address:</strong> maihar
+      </address>
+    </div>
+      
+      <div class="col-sm-8 contact-form">
+        <%= form_for(@contact,url:{action: @contact.new_record? ? :create : :update}) do |f| %>
+          <% if @contact.errors.any? %>
+            <div id="error_explanation">
+              <h2><%#= pluralize(@contact.errors.count, "error") %> <!-- prohibited this contactmin_contact from being saved: --></h2>
+
+              <ul>
+              <% @contact.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="row">
+            <div class="col-xs-4 col-md-4 form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name,:class=>"form-control",:placeholder=>"name" %>
+            </div>
+            <div class="col-xs-4 col-md-4 form-group">
+              <%= f.label :email %>
+              <%= f.text_field :email,:class=>"form-control",:placeholder=>"email" %>
+            </div>
+            <div class="col-xs-4 col-md-4 form-group">
+              <%= f.label :phone %>
+              <%= f.text_field :phone,:class=>"form-control",:placeholder=>"phone" %>
+            </div>
+          </div>
+            <%= f.label :message %>
+            <%= f.text_area :message,:class=>"form-control",:placeholder=>"message" %>
+            <br />
+          <div class="row">
+            <div class="col-xs-12 col-md-12 form-group">
+              <%= f.submit :class=>"btn btn-info btn-update"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  host: localhost
+  database: astrology
+  username: postgres
+  password: 
+  pool: 5
+  timeout: 5000

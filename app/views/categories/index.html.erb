@@ -1,0 +1,23 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+<% @categories.each do |category| %>
+  <div class="row">
+
+    <div class="col-md-4">
+      <h3>category</h3>
+      <p><%= category.name %></p>
+          
+    </div>
+
+    <div class="col-md-8">
+        <h3>Product</h3>
+               <!-- <p><%#= image_tag category.avatar,:style=>"width: 344px;"%></p> -->
+        <% category.products.each do |product| %>
+          <p> <%= link_to product.name, product_path(product) %></p>
+        <%end%>
+    </div>
+    <%#= link_to 'Show', category %>
+  </div><br>
+<%end%>
+  
+</div>

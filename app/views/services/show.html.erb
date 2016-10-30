@@ -1,0 +1,21 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<div class="row">
+
+		<div class="col-md-4">
+			<h3><%= @service.name %></h3>
+		    <%= image_tag @service.avatar.url,:class=>"img-responsive" %>
+		</div>
+
+		<div class="col-md-8">
+		    <h3>Description</h3>
+		    <p><%= @service.message %></p>
+		</div>
+
+	</div><br>
+
+	<%= link_to 'Back', services_path,:class=>"btn btn-default" %>
+</div>
+
+

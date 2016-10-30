@@ -1,0 +1,19 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+<% @about_us.each do |about_us| %>
+  <div class="row">
+
+    <div class="col-md-4">
+      <h3><%= about_us.name %></h3>
+          <%= image_tag about_us.avatar,:style=>"width: 344px;"%>
+    </div>
+
+    <div class="col-md-8">
+        <h3>Description</h3>
+        <p><%= about_us.description %></p>
+    </div>
+
+  </div><br>
+<%end%>
+  
+</div>
